@@ -19,7 +19,7 @@ print(guess)
 
 # TODO-3:
 for letter in chosen_word:
-    if letter != guess:
-        print("Wrong")
-    else:
+    if letter == guess:
         print("True")
+    else:
+        print("Wrong")
