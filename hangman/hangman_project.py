@@ -1,3 +1,5 @@
+import random
+
 word_list = ["aardvark", "baboon", "camel"]
 
 # TODO-1 - Randomly choose a word from the word_list and assign it to a variable called chosen_word. Then print it.
@@ -8,9 +10,9 @@ word_list = ["aardvark", "baboon", "camel"]
 #  is, "Wrong" if it's not.
 
 # TODO-1 :
-
-import random
-
 chosen_word = random.choice(word_list)
-
 print(chosen_word)
+
+# TODO-2:
+guess = str(input("Guess a letter: ")).lower()
+print(guess)
