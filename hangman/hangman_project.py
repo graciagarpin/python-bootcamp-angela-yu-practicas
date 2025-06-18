@@ -14,5 +14,5 @@ chosen_word = random.choice(word_list)
 print(chosen_word)
 
 # TODO-2:
-guess = str(input("Guess a letter: ")).lower()
+guess = input("Guess a letter: ").lower()
 print(guess)
