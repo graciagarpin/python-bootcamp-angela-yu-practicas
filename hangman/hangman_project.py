@@ -9,10 +9,17 @@ word_list = ["aardvark", "baboon", "camel"]
 # TODO-3 - Check if the letter the user guessed (guess) is one of the letters in the chosen_word. Print "Right" if it
 #  is, "Wrong" if it's not.
 
-# TODO-1 :
+# TODO-1:
 chosen_word = random.choice(word_list)
 print(chosen_word)
 
 # TODO-2:
 guess = input("Guess a letter: ").lower()
 print(guess)
+
+# TODO-3:
+for letter in chosen_word:
+    if letter != guess:
+        print("Wrong")
+    else:
+        print("True")
