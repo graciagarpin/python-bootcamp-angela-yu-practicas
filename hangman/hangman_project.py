@@ -5,6 +5,14 @@ word_list = ["aardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
 print(chosen_word)
 
+placeholder = ""
+
+for letter in chosen_word:
+    letter = "_ "
+    placeholder += letter
+
+print(placeholder)
+
 guess = input("Guess a letter: ").lower()
 print(guess)
 
