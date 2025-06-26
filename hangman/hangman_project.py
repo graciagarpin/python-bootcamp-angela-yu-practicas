@@ -25,6 +25,8 @@ display = ""
 
 for letter in chosen_word:
     if letter == guess:
-        print(letter)
+        display += letter
     else:
-        print("_")
+        display += "_ "
+
+print(display)
