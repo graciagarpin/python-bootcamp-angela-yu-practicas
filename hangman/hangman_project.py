@@ -17,6 +17,7 @@ print(f'Word to guess: {placeholder}')
 #TODO 1: Use a while loop to let the user guess again.:
 
 game_over = False
+correct_letters = []
 
 while not game_over:
     guess = input("Guess a letter: ").lower()
@@ -27,6 +28,13 @@ while not game_over:
 # Update the for loop so that previous guesses are added to the display String.
     for letter in chosen_word:
         if letter == guess:
+            display += letter
+            # Optimización en caso de trabajar con muchos datos: para evitar guardar letras repetidas en el listado de correct_letters, añadiría una condición que evaluase
+            # si ya existe la letra que estamos tratando en ese momento, antes de hacer el append de la letra a la lista.
+            if letter not in correct_letters:
+                correct_letters.append(guess)
+                display += letter
+        elif letter in correct_letters:
             display += letter
         else:
             display += "_ "
