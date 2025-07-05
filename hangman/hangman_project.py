@@ -98,6 +98,7 @@ while not game_over:
 
     if guess not in chosen_word:
         lives -= 1
+        print(f'You guessed {guess}, that\'s not in the word. You lose a life')
         if lives == 0:
             game_over = True
             print("You lose.")
@@ -109,6 +110,7 @@ while not game_over:
     # TODO-3:
     # print the ASCII art from the list stages that corresponds to the current number of lives the user has remaining.
     print(stages[lives])
+    print(f"****************************{lives}/6 LIVES LEFT****************************")
 else:
     print("You win.")
 
