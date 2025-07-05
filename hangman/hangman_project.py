@@ -70,12 +70,12 @@ for letter in chosen_word:
     letter = "_ "
     placeholder += letter
 
-print(f'Word to guess: {placeholder}')
 
 game_over = False
 correct_letters = []
 
 while not game_over:
+    print(f'Word to guess: {placeholder}')
     guess = input("Guess a letter: ").lower()
 
     display = ""
