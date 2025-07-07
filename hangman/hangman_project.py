@@ -1,68 +1,16 @@
 import random
-stages = [r'''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', r'''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', r'''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
 
-word_list = ["aardvark", "baboon", "camel"]
+# TODO-1: - Update the word list to use the 'word_list' from hangman_words.py
+import hangman_art
+import hangman_words
 
 lives = 6
+# TODO-3: - Import the logo from hangman_art.py and print it at the start of the game.
+print(hangman_art.logo)
 
-chosen_word = random.choice(word_list)
-#remove then:
-print(chosen_word)
+#from hangman_words import logo
+
+chosen_word = random.choice(hangman_words.word_list)
 
 placeholder = ""
 
@@ -107,9 +55,8 @@ while not game_over:
         game_over = True
         print("You win.")
 
-    # TODO-3:
-    # print the ASCII art from the list stages that corresponds to the current number of lives the user has remaining.
-    print(stages[lives])
+    # TODO-2: - Update the code below to use the stages List from the file hangman_art.py
+    print(hangman_art.stages[lives])
     print(f"****************************{lives}/6 LIVES LEFT****************************")
 else:
     print("You win.")
