@@ -12,13 +12,11 @@ shift = int(input("Type the shift number:\n"))
 
 # TODO-4: What happens if you try to shift z forwards by 9? Can you fix the code?
 
-# original_text = zi , shift_amount = 9
 def encrypt(original_text, shift_amount):
     encrypted_text = ""
-    for text_letter in original_text: # z
-        index_letter = alphabet.index(text_letter) # index = 25
-        index_encoded_letter = index_letter + shift_amount # index_encoded = (25 + 9) % 26 = 8 position
-        shifted_position = index_encoded_letter % len(alphabet)
+    for text_letter in original_text: # e.g: z
+        index_encoded_letter = alphabet.index(text_letter) + shift_amount # index_encoded = (25 + 9) % 26 = 8 position
+        index_encoded_letter %= len(alphabet)
         encrypted_text += alphabet[shifted_position]
     return print(f"Here is the encoded result: {encrypted_text}")
 
