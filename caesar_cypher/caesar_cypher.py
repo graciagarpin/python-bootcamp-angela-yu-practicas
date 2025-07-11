@@ -4,6 +4,7 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
+'''
 def encrypt(original_text, shift_amount):
     encrypted_text = ""
     for text_letter in original_text:
@@ -19,17 +20,19 @@ def decrypt(original_text, shift_amount): # aa 2 --> yy
         index_decoded_letter %= len(alphabet)
         decrypted_text += alphabet[index_decoded_letter]
     return print(f"Here is the decoded result: {decrypted_text}")
-
+'''
 # TODO-3: Combine the 'encrypt()' and 'decrypt()' functions into one function called 'caesar()'.
 #  Use the value of the user chosen 'direction' variable to determine which functionality to use.
 # call the caesar function instead of encrypt/decrypt and pass in all three variables direction/text/shift
 
 def caesar(encode_or_decode, original_text, shift_amount):
-    if encode_or_decode == 'encode':
-        encrypt(text, shift)
-    elif encode_or_decode == 'decode':
-        decrypt(text, shift)
-    else:
-        print("Sorry, I cant understand you, please, type 'encode' to encrypt, or type 'decode' to decrypt")
+    output_text = ""
+    if encode_or_decode == 'decode':
+        shift_amount = shift_amount * -1
+    for text_letter in original_text:
+        shifted_position = alphabet.index(text_letter) + shift_amount
+        shifted_position %= len(alphabet)
+        output_text += alphabet[shifted_position]
+    print(f"Here is the encoded result: {output_text}")
 
 caesar(direction, text, shift)
