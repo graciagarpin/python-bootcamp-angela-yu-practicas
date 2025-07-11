@@ -24,10 +24,10 @@ def decrypt(original_text, shift_amount): # aa 2 --> yy
 #  Use the value of the user chosen 'direction' variable to determine which functionality to use.
 # call the caesar function instead of encrypt/decrypt and pass in all three variables direction/text/shift
 
-def caesar(cypher_direction, original_text, shift_amount):
-    if cypher_direction == 'encode':
+def caesar(encode_or_decode, original_text, shift_amount):
+    if encode_or_decode == 'encode':
         encrypt(text, shift)
-    elif cypher_direction == 'decode':
+    elif encode_or_decode == 'decode':
         decrypt(text, shift)
     else:
         print("Sorry, I cant understand you, please, type 'encode' to encrypt, or type 'decode' to decrypt")
