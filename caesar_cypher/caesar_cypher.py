@@ -18,14 +18,14 @@ def encrypt(original_text, shift_amount):
         encrypted_text += alphabet[index_encoded_letter]
     return print(f"Here is the encoded result: {encrypted_text}")
 
-def decrypt(original_text, shift_amount):
+def decrypt(original_text, shift_amount): # aa 2 --> yy
     decrypted_text = ""
     for text_letter in original_text:
         index_decoded_letter = alphabet.index(text_letter) - shift_amount
+        index_decoded_letter %= len(alphabet)
         print(index_decoded_letter)
         decrypted_text += alphabet[index_decoded_letter]
     return print(f"Here is the decoded result: {decrypted_text}")
-
 
 # encrypt(text, shift)
 decrypt(text, shift)
