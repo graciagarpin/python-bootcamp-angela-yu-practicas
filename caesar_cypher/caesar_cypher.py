@@ -2,16 +2,12 @@ from art import logo
 
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-#
-
-print(logo)
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
+# TODO-2: If the user enters a number/symbol/space, encode/decode alphabetic characters and keep and print non-alphabetic characters as is.
 
 def caesar(encode_or_decode, original_text, shift_amount):
+
     output_text = ""
-    if encode_or_decode == 'decode':
+    if encode_or_decode == 'decode': # cualquier input que no sea 'decode' se considerará 'encode'
         shift_amount = shift_amount * -1
     for text_letter in original_text:
         if text_letter not in alphabet:
@@ -23,5 +19,16 @@ def caesar(encode_or_decode, original_text, shift_amount):
     print(f"Here is the encoded result: {output_text}")
 
 # TODO-2: restart the cypher program
-
-caesar(direction, text, shift)
+print(logo)
+turn_off_game = False
+while not turn_off_game:
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+    caesar(direction, text, shift)
+    continue_game_output = input("Type 'yes' if you want to go again. Otherwise type 'no':\n")
+    if continue_game_output != 'yes'.lower(): # cualquier input que no sea 'yes' se considerará 'no'
+        print("Goodbye")
+        turn_off_game = True
+    else:
+        turn_off_game = False
