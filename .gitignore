@@ -1,1 +1,38 @@
+# Byte-compiled / optimized / DLL files
 __pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.env/
+.venv/
+env/
+venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VSCode settings (si usas este editor)
+.vscode/
+
+# Archivos temporales del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs y archivos temporales
+*.log
+*.tmp
+*.bak
+
+# Archivos de test (opcional)
+*.coverage
+.cache/
+.pytest_cache/
+
+# Entornos reproducibles (poetry, pipenv, etc)
+.poetry/
+Pipfile.lock
+poetry.lock
+
+# Archivos de configuración local
+.env
