@@ -20,8 +20,8 @@ while not turn_off_game:
     bids[user_name] = user_price
     print(bids) # we have only one bidder stored in the dictionary.
 
-    another_bidder = input("Are there any other bidders? Type 'yes' or 'no': ")
-    if another_bidder == 'no':
+    should_continue = input("Are there any other bidders? Type 'yes' or 'no': \n".lower())
+    if should_continue == 'no':
         print(bids)
         compare_bids()
         turn_off_game = True
