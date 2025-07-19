@@ -9,9 +9,9 @@ user_price = int(input("What is your bid?: $ "))
 
 bids = {} #empty dictionary
 
-# TODO 2: Save data into a Dictionary: key - value
+# TODO 2: Save data into dictionary: key - value
 
-bid = {user_name: user_price}
+bids[user_name] = user_price
 
 # TODO 3: Whether if new bids need to be added
 
