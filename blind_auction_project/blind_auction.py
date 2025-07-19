@@ -3,8 +3,15 @@ from art import logo
 print(logo)
 
 # TODO 4: Compare bids in dictionary
-def compare_bids():
-    print("comparing bids")
+def compare_bids(total_bids):
+    highest_bid_amount = 0
+    winner = ""
+
+    for name, bid in total_bids.items():
+        if bid > highest_bid_amount:
+            highest_bid_amount = bid
+            winner = name
+    return print(f"The winner is {winner} with a bid of ${highest_bid_amount}")
 
 # TODO 3: Whether if new bids need to be added
 
@@ -23,5 +30,5 @@ while not turn_off_game:
     should_continue = input("Are there any other bidders? Type 'yes' or 'no': \n".lower())
     if should_continue == 'no':
         print(bids)
-        compare_bids()
+        compare_bids(bids)
         turn_off_game = True
