@@ -8,19 +8,39 @@ next_num = float(input("What's the next number?: "))
 
 #TODO 2: calculate operation and print the result (float) ej: 2.0 + 4.0 = 6.0
 
-def calculation(num1, num2):
-    result = 0
+def add(n1, n2):
+    return n1 + n2
+
+def subtract(n1, n2):
+    return n1 - n2
+
+def multiply(n1, n2):
+    return n1 * n2
+
+def divide(n1, n2):
+    return n1 / n2
+
+operations = {
+    "+": add,
+    "-": subtract,
+    "*": multiply,
+    "/": divide,
+}
+
+def calculation(num1, num2, operation):
+    current_result = 0
     if operation == '+':
-        result = num1 + num2
+        current_result = operations['+'](num1, num2)
     elif operation == '-':
-        result = num1 - num2
+        current_result = operations['-'](num1, num2)
     elif operation == '*':
-        result = num1 * num2
+        current_result = operations['*'](num1, num2)
     elif operation == '/':
-        result = num1 / num2
+        current_result = operations['/'](num1, num2)
+    return current_result
 
-    return print(result)
+print(f"{first_num} {operation} {next_num} = {calculation(first_num, next_num, operation)}")
+
 # TODO 3: Ask user if wants to continue calculating with result or restart the calculation.
-# print(f"Type 'y' to continue calculating with {result}, or type 'n' to start a new calculation: ")
+# print(f"Type 'y' to continue calculating with {current_result}, or type 'n' to start a new calculation: ")
 
-calculation(first_num, next_num)
