@@ -24,20 +24,28 @@ operations = {
     "/": divide,
 }
 
-def calculation(num1, num2, operation):
+def calculation(num1, num2):
     current_result = 0
-    current_result = operations[operation](num1, num2)
+    current_result = operations[operation_symbol](num1, num2)
     return current_result
 
-# Ask user for a first number, operation and next number
-first_num = float(input("What's the first number?: "))
-for symbol in operations:
-    print(symbol)
-operation = input("Pick an operation: ")
-next_num = float(input("What's the next number?: "))
+# Ask user for a first number, operation_symbol and next number
 
-print(f"{first_num} {operation} {next_num} = {calculation(first_num, next_num, operation)}")
+should_continue = True
+while should_continue:
+    first_num = float(input("What's the first number?: "))
+    for symbol in operations:
+        print(symbol)
+    operation_symbol = input("Pick an operation: ")
+    next_num = float(input("What's the next number?: "))
+    answer = calculation(first_num, next_num)
+    print(f"{first_num} {operation_symbol} {next_num} = {answer}")
 
 # TODO 3: Ask user if wants to continue calculating with result or restart the calculation.
-# print(f"Type 'y' to continue calculating with {current_result}, or type 'n' to start a new calculation: ")
+    restart = input(f"Type 'y' to continue calculating with {answer}, or type 'n' to start a new calculation: ")
+    print(restart)
+    if restart == 'y':
+        should_continue = True
+    if restart == 'n':
+        should_continue = False
 
