@@ -29,14 +29,7 @@ operations = {
 
 def calculation(num1, num2, operation):
     current_result = 0
-    if operation == '+':
-        current_result = operations['+'](num1, num2)
-    elif operation == '-':
-        current_result = operations['-'](num1, num2)
-    elif operation == '*':
-        current_result = operations['*'](num1, num2)
-    elif operation == '/':
-        current_result = operations['/'](num1, num2)
+    current_result = operations[operation](num1, num2)
     return current_result
 
 print(f"{first_num} {operation} {next_num} = {calculation(first_num, next_num, operation)}")
