@@ -17,7 +17,7 @@ def deal_card(deck):
     values = random.choice(cards)
     return values
 
-# TODO 3: Calculate and add up players's scores: ✓
+# TODO 3: Calculate players's scores: ✓
 
 def calculate_score(list_of_values):
     result = 0
@@ -25,14 +25,14 @@ def calculate_score(list_of_values):
         result += value
     return result
 
-# TODO 2: pick up  2 cards to each player ramdomly and add to the list. Pick up from cards's list: ✓
+# TODO 2: pick up  2 cards to each player ramdomly and add to the list: ✓
 for card in range(2):
     user_cards.append(deal_card(cards))
 
 for card in range(2):
     computer_cards.append(deal_card(cards))
 
-#calculate score of each player:
+#add up scores:
 user_score = calculate_score(user_cards)
 computer_score = calculate_score(computer_cards)
 
