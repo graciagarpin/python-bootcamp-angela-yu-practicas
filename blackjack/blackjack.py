@@ -9,7 +9,7 @@ import random
 user_cards = []
 computer_cards = []
 
-#TODO 2.1: Deal une card from the deck: ✓
+#TODO 2.1: Deal a random card from the deck: ✓
 
 def deal_card(deck):
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
@@ -25,10 +25,8 @@ def calculate_score(list_of_values):
     return result
 
 # TODO 2: pick up  2 cards to each player ramdomly and add to the list: ✓
-for card in range(2):
+for _ in range(2):
     user_cards.append(deal_card(cards))
-
-for card in range(2):
     computer_cards.append(deal_card(cards))
 
 #add up scores:
