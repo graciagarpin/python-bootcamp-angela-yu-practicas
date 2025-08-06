@@ -1,24 +1,23 @@
 import random
 
+# Use the following list as the deck of cards:
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
-#todo 0: Start game:
+#TODO 0: Start game:
 # print("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
 # if asks 'y':
-# TODO 1: create 2 empty lists to hold user card and computer card
+# TODO 1: create 2 empty lists to hold user card and computer card: ✓
 
 user_cards = []
 computer_cards = []
 
-# TODO 2: pick up  2 cards to each player ramdomly and add to the list. Pick up from cards's list.
+#TODO 2.1: Deal une card from the deck
 
-for _ in range(2):
-    value = random.sample(cards, 2)
-    print(value)
+def deal_card(deck):
+    values = random.choice(cards)
+    return values
 
-# TODO 3: Calculate and add up players's scores
-
-# calculate score adding the values of the cards:
+# TODO 3: Calculate and add up players's scores: ✓
 
 def calculate_score(list_of_values):
     result = 0
@@ -26,9 +25,20 @@ def calculate_score(list_of_values):
         result += value
     return result
 
+# TODO 2: pick up  2 cards to each player ramdomly and add to the list. Pick up from cards's list: ✓
+for card in range(2):
+    user_cards.append(deal_card(cards))
+print(user_cards)
+
+for card in range(2):
+    computer_cards.append(deal_card(cards))
+print(computer_cards)
+
+#calculate score of each player:
 user_score = calculate_score(user_cards)
 computer_score = calculate_score(computer_cards)
-
+print(user_score)
+print(computer_score)
 # print logo
 # print(f"Your cards: {user_cards}, current score: {user_score}\nComputer's first card: {computer_cards[0]}")
 #  print("Type 'y' to get another card, type 'n' to pass: ")
