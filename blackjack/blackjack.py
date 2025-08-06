@@ -1,10 +1,8 @@
 import random
 
-# Use the following list as the deck of cards:
-cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 #TODO 0: Start game:
-# print("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
+# input(print("Do you want to play a game of Blackjack? Type 'y' or 'n': "))
 # if asks 'y':
 # TODO 1: create 2 empty lists to hold user card and computer card: ✓
 
@@ -14,8 +12,9 @@ computer_cards = []
 #TODO 2.1: Deal une card from the deck: ✓
 
 def deal_card(deck):
-    values = random.choice(cards)
-    return values
+    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+    card = random.choice(cards)
+    return card
 
 # TODO 3: Calculate players's scores: ✓
 
@@ -39,5 +38,14 @@ computer_score = calculate_score(computer_cards)
 # print logo
 print(f"Your cards: {user_cards}, current score: {user_score}\nComputer's first card: {computer_cards[0]}")
 
-#  print("Type 'y' to get another card, type 'n' to pass: ")
+# TODO 4: Has computer or user a blackjack? (Ace + 10) ---> Check the hands:
+'''
+if user_score == 21:
+    print("You win 😄")
+elif computer_score == 21:
+    print()
+'''
+
+# TODO 5: Ask for another card
+should_continue = input(print("Type 'y' to get another card, type 'n' to pass: "))
 
