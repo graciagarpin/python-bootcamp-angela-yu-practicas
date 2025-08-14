@@ -18,13 +18,7 @@ def deal_card():
 # TODO 3: Calculate players's scores: ✓
 
 def calculate_score(list_of_values):
-
-    result = 0
-    for value in list_of_values:
-        result += value
-    return result
-
-    # return sum(list_of_values)
+    return sum(list_of_values)
 
 # TODO 2.2: pick up  2 cards to each player ramdomly and add to the list: ✓
 for _ in range(2):
