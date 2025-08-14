@@ -1,6 +1,5 @@
 import random
 
-
 #TODO 0: Start game:
 # input(print("Do you want to play a game of Blackjack? Type 'y' or 'n': "))
 # if asks 'y':
@@ -11,7 +10,7 @@ computer_cards = []
 
 #TODO 2.1: Deal a random card from the deck: ✓
 
-def deal_card(deck):
+def deal_card():
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     card = random.choice(cards)
     return card
@@ -19,15 +18,18 @@ def deal_card(deck):
 # TODO 3: Calculate players's scores: ✓
 
 def calculate_score(list_of_values):
+
     result = 0
     for value in list_of_values:
         result += value
     return result
 
-# TODO 2: pick up  2 cards to each player ramdomly and add to the list: ✓
+    # return sum(list_of_values)
+
+# TODO 2.2: pick up  2 cards to each player ramdomly and add to the list: ✓
 for _ in range(2):
-    user_cards.append(deal_card(cards))
-    computer_cards.append(deal_card(cards))
+    user_cards.append(deal_card())
+    computer_cards.append(deal_card())
 
 #add up scores:
 user_score = calculate_score(user_cards)
@@ -41,9 +43,8 @@ print(f"Your cards: {user_cards}, current score: {user_score}\nComputer's first 
 if user_score == 21:
     print("You win 😄")
 elif computer_score == 21:
-    print()
+    print("You lose")
+else user_score =! 21:
 '''
-
 # TODO 5: Ask for another card
 should_continue = input(print("Type 'y' to get another card, type 'n' to pass: "))
-
