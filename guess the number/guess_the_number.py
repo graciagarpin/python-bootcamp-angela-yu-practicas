@@ -1,9 +1,9 @@
 # TODO LIST
-#  ✔ TODO 1: print: Welcome to the Number Guessing Game! I'm thinking of a number between 1 and 100
-#  ✔ TODO : generate a random number between 1 and 100 and store in the variable "number". This will be the number to guess.
-# TODO : print input: Choose a difficulty. Type 'easy' or 'hard':
-# TODO  - LEVEL OF DIFFICULTY -: easy: You have 10 attemps remaining to guess the number. hard: You have 5 attemps remaining to guess the number.
-# TODO : print input: Make a guess:
+# ✔ TODO 1: print: Welcome to the Number Guessing Game! I'm thinking of a number between 1 and 100
+# ✔ TODO 2: generate a random number between 1 and 100 and store in the variable "number". This will be the number to guess.
+# ✔ TODO 3: Choose a difficulty. Type 'easy' or 'hard':
+    # ✔ TODO - select the LEVEL OF DIFFICULTY -: easy: You have 10 attemps remaining to guess the number. hard: You have 5 attemps remaining to guess the number.
+# TODO 4: print input: Make a guess:
 # TODO : Compare the guess with the number.
     # TODO .1: if the guess is higher than the number, print: Too high. n/Guess again. n/You have {lives} attemps remaining to guess the number.
     # TODO .2: if the guess is lower than the number, print: Too low. n/Guess again. n/You have {lives} attemps remaining to guess the number.
@@ -25,16 +25,19 @@ print(number)
 
 lives = 0
 
-def apply_difficulty_level(lives):
+def select_difficulty_level(lives):
     level_of_difficulty = input("Choose a difficulty. Type 'easy' or 'hard':")
-    print(level_of_difficulty)
+
 
     if level_of_difficulty == "easy":
+        print("You have 10 attemps remaining to guess the number.")
         return lives + 10
     elif level_of_difficulty == "hard":
+        print("You have 5 attemps remaining to guess the number.")
         return lives + 5
     else:
         return "type again" #cambiar más adelante
 
-lives = apply_difficulty_level(lives)
-print(lives)
+lives = select_difficulty_level(lives)
+
+guess = input("Make a guess: ")
