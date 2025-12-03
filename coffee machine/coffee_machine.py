@@ -31,22 +31,24 @@ resources = {
 }
 
 # TODO 1: Prompt user what drink they want.
-
-chosen_drink = input("What would you like? (espresso/latte/cappuccino): ")
-
-print(f"You have selected a {chosen_drink}")
-
 #TODO 2:  Turn off the Coffee Machine by entering “off” to the prompt.
-
-if chosen_drink == "off":
-    pass # here the code to turn off the program
-
 # TODO 3 Resources resume: Print report when the user enters “report” to the prompt.
 #  this report shows the current resource values.
-if chosen_drink == "report":
-    print(f"Water: {resources["water"]}ml\nMilk: {resources["milk"]}\nCoffee: {resources["coffee"]}\nMoney: {"money"}")
+
+is_on = True
+
+while is_on:
+    choice = input("What would you like? (espresso/latte/cappuccino): ")
+    if choice == "off":
+        is_on = False
+    if choice == "report":
+        print(
+            f"Water: {resources["water"]}ml\nMilk: {resources["milk"]}\nCoffee: {resources["coffee"]}\nMoney: ${"money"}")
+    else:
+        print(f"You have selected a {choice}")
 
 # TODO: check if there are enough resources to make that drink.
+# aqui tendría que mapear para comparar si los recursos de la bebida requerida son = ó > que los current resources
 
 
 # TODO: if there are not enough or zero resources, it do not continue to make the drink and print: “Sorry there is not enough water.”
