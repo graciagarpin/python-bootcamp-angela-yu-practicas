@@ -24,6 +24,7 @@ MENU = {
     }
 }
 
+profit = 0
 resources = {
     "water": 300,
     "milk": 200,
@@ -41,10 +42,13 @@ while is_on:
     choice = input("What would you like? (espresso/latte/cappuccino): ")
     if choice == "off":
         is_on = False
-    if choice == "report":
+    elif choice == "report":
         print(
-            f"Water: {resources["water"]}ml\nMilk: {resources["milk"]}\nCoffee: {resources["coffee"]}\nMoney: ${"money"}")
-    if choice == "latte" or choice == "espresso" or choice == "capuccino":
+            f"Water: {resources["water"]}ml\n"
+            f"Milk: {resources["milk"]}\n"
+            f"Coffee: {resources["coffee"]}\n"
+            f"Money: ${profit}")
+    elif choice == "latte" or choice == "espresso" or choice == "capuccino":
         print(f"You have selected a {choice}")
 
 # TODO: check if there are enough resources to make that drink.
