@@ -44,7 +44,7 @@ while is_on:
     if choice == "report":
         print(
             f"Water: {resources["water"]}ml\nMilk: {resources["milk"]}\nCoffee: {resources["coffee"]}\nMoney: ${"money"}")
-    else:
+    if choice == "latte" or choice == "espresso" or choice == "capuccino":
         print(f"You have selected a {choice}")
 
 # TODO: check if there are enough resources to make that drink.
