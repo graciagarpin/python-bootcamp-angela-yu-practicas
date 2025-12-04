@@ -32,9 +32,13 @@ resources = {
 }
 
 # TODO 1: Prompt user what drink they want.
-#TODO 2:  Turn off the Coffee Machine by entering “off” to the prompt.
+# TODO 2:  Turn off the Coffee Machine by entering “off” to the prompt.
 # TODO 3 Resources resume: Print report when the user enters “report” to the prompt.
 #  this report shows the current resource values.
+# TODO 4 : check if there are enough resources to make that drink.
+#def is_sufficient_resource(order_ingredient): # You have selected a latte
+    #for ingredient in drink["ingredients"]: # {'water': 200, 'milk': 150, 'coffee': 24}
+        #if order_ingredient >= ingredient.values:
 
 is_on = True
 
@@ -50,10 +54,12 @@ while is_on:
             f"Money: ${profit}")
     elif choice == "latte" or choice == "espresso" or choice == "capuccino":
         print(f"You have selected a {choice}")
+        drink = MENU[choice]
+        #is_sufficient_resource(drink["ingredients"])
+        print(drink["ingredients"])
+    else:
+       print(f"Please, type your choice again")
 
-# TODO: check if there are enough resources to make that drink.
-# aqui tendría que mapear para comparar si los recursos de la bebida requerida son = ó > que los current resources
-
+# is_sufficient_resources()
 
 # TODO: if there are not enough or zero resources, it do not continue to make the drink and print: “Sorry there is not enough water.”
-
