@@ -56,7 +56,7 @@ def is_sufficient_resource(order_ingredient): #(drink["ingredients"]) latte
 
 # TODO 7: Calculate the monetary value of the coins inserted.
 
-def calculate_amount(list_amounts_coin_types):
+def process_coins(list_amounts_coin_types):
     total = 0
     #print(list_amounts_coin_types) # [1, 2, 3, 4]
     #print(coins_types) # {'quarters': 0.25, 'dimes': 0.1, 'nickles': 0.05, 'pennies': 0.01}
@@ -86,6 +86,6 @@ while is_on:
             dimes = input("How many dimes?: ")
             nickles = input("How many nickles?: ")
             pennies = input("How many pennies?: ")
-            calculate_amount([int(quarters), int(dimes), int(nickles), int(pennies)])
+            process_coins([int(quarters), int(dimes), int(nickles), int(pennies)])
     else:
        print(f"Please, type your choice again")
