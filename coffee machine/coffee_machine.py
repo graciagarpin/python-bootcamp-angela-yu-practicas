@@ -71,6 +71,20 @@ def process_coins():
     print(total)
     return total
 
+# TODO 8: To process the payment :  If the user has inserted too much money, the machine should offer change.
+
+def is_transaction_successful(money_received, drink_cost,):
+    # el pago es suficiente?
+    if money_received >= drink_cost:
+        # add the cost to the machine -> update the profit invoking the global scope:
+        global profit
+        profit += drink_cost
+        return True
+    # process the change:  Check the price of the drink and calculate the rest
+    else:
+        print("Sorry, that's not enough money. Money refunded.")
+        return False
+
 is_on = True
 
 while is_on:
@@ -86,8 +100,8 @@ while is_on:
     elif choice == "latte" or choice == "espresso" or choice == "capuccino":
         print(f"You have selected a {choice}")
         drink = MENU[choice]
-        is_enough = is_sufficient_resource(drink["ingredients"])
-        if is_enough:
-            process_coins()
+        if is_sufficient_resource(drink["ingredients"]):
+            payment = process_coins() # total del pago
+            is_transaction_successful(payment, drink["cost"])
     else:
        print(f"Please, type your choice again")
