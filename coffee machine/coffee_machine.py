@@ -76,11 +76,16 @@ def process_coins():
 def is_transaction_successful(money_received, drink_cost,):
     # el pago es suficiente?
     if money_received >= drink_cost:
+        # process the change:  Check the price of the drink and calculate the rest
+        change = round(money_received % drink_cost, 2)
+        print(change)
+        if change != 0:
+            print(f"Here is ${change} dollars in change.")
         # add the cost to the machine -> update the profit invoking the global scope:
         global profit
         profit += drink_cost
+        print(profit)
         return True
-    # process the change:  Check the price of the drink and calculate the rest
     else:
         print("Sorry, that's not enough money. Money refunded.")
         return False
