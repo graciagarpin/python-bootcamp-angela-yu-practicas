@@ -56,12 +56,19 @@ def is_sufficient_resource(order_ingredient): #(drink["ingredients"]) latte
 
 # TODO 7: Calculate the monetary value of the coins inserted.
 
-def process_coins(list_amounts_coin_types):
+def process_coins():
+    print("Please, insert coins.")
+    quarters = int(input("How many quarters?: "))
+    dimes = int(input("How many dimes?: "))
+    nickles = int(input("How many nickles?: "))
+    pennies = int(input("How many pennies?: "))
+
+    list_amounts_coin_types = [quarters, dimes, nickles, pennies] # [1, 2, 3, 4]
     total = 0
-    #print(list_amounts_coin_types) # [1, 2, 3, 4]
     #print(coins_types) # {'quarters': 0.25, 'dimes': 0.1, 'nickles': 0.05, 'pennies': 0.01}
     for coins_type, amount in zip (coins_types, list_amounts_coin_types):
         total = total + amount * coins_types[coins_type]
+    print(total)
     return total
 
 is_on = True
@@ -81,11 +88,6 @@ while is_on:
         drink = MENU[choice]
         is_enough = is_sufficient_resource(drink["ingredients"])
         if is_enough:
-            print("Please, insert coins.")
-            quarters = input("How many quarters?: ")
-            dimes = input("How many dimes?: ")
-            nickles = input("How many nickles?: ")
-            pennies = input("How many pennies?: ")
-            process_coins([int(quarters), int(dimes), int(nickles), int(pennies)])
+            process_coins()
     else:
        print(f"Please, type your choice again")
