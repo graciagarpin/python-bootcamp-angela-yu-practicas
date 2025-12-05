@@ -114,7 +114,7 @@ while is_on:
             f"Milk: {resources["milk"]}\n"
             f"Coffee: {resources["coffee"]}\n"
             f"Money: ${profit}")
-    elif choice == "latte" or choice == "espresso" or choice == "capuccino":
+    elif choice == "latte" or choice == "espresso" or choice == "cappuccino":
         print(f"You have selected a {choice}")
         drink = MENU[choice]
         if is_sufficient_resource(drink["ingredients"]):
@@ -122,5 +122,6 @@ while is_on:
             if is_transaction_successful(payment, drink["cost"]):
                 #make coffee: deduct the resources used to make the coffee
                 make_coffee(drink["ingredients"])
+                print( f"Here is your {choice}. Enjoy!")
     else:
        print(f"Please, type your choice again")
