@@ -76,15 +76,11 @@ def process_coins():
 def is_transaction_successful(money_received, drink_cost,):
     # el pago es suficiente?
     if money_received >= drink_cost:
-        # process the change:  Check the price of the drink and calculate the rest
-        change = round(money_received % drink_cost, 2)
-        print(change)
+        change = round(money_received % drink_cost, 2) # process the change:  Check the price of the drink and calculate the rest
         if change > 0:
             print(f"Here is ${change} dollars in change.")
-        # add the cost to the machine -> update the profit invoking the global scope:
-        global profit
+        global profit # add the cost to the machine -> update the profit invoking the global scope
         profit += drink_cost
-        print(profit)
         return True
     else:
         print("Sorry, that's not enough money. Money refunded.")
@@ -92,12 +88,11 @@ def is_transaction_successful(money_received, drink_cost,):
 
 #TODO 9: Make the coffee: deduct the resources used to make the drink selected:
 
-def make_coffee(order_ingredient):
+def make_coffee(drink_selected,  order_ingredient):
     for element in order_ingredient:
-        #update the resources: overwrite the value
-        resources[element] = resources[element] - order_ingredient[element]
+        resources[element] -= order_ingredient[element] #update the resources: overwrite the value
         print(resources[element])
-    print(resources)
+    print(f"Here is your {drink_selected}. ☕ Enjoy!")
 
 #######################################
 #PROGRAM:
@@ -110,9 +105,9 @@ while is_on:
         is_on = False
     elif choice == "report":
         print(
-            f"Water: {resources["water"]}ml\n"
-            f"Milk: {resources["milk"]}\n"
-            f"Coffee: {resources["coffee"]}\n"
+            f"Water: {resources["water"]} ml\n"
+            f"Milk: {resources["milk"]} ml\n"
+            f"Coffee: {resources["coffee"]} gr\n"
             f"Money: ${profit}")
     elif choice == "latte" or choice == "espresso" or choice == "cappuccino":
         print(f"You have selected a {choice}")
@@ -120,8 +115,6 @@ while is_on:
         if is_sufficient_resource(drink["ingredients"]):
             payment = process_coins() # total del pago
             if is_transaction_successful(payment, drink["cost"]):
-                #make coffee: deduct the resources used to make the coffee
-                make_coffee(drink["ingredients"])
-                print( f"Here is your {choice}. Enjoy!")
+                make_coffee(choice, drink["ingredients"])
     else:
        print(f"Please, type your choice again")
