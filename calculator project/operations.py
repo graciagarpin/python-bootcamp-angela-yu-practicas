@@ -1,10 +1,8 @@
-
 #TODO:
 
 # definir la clase OperationManager:
 # debe contener el diccionario de símbolos → métodos
 # debe contener métodos matemáticos
-# no calcula, si no que provee de operaciones a calculator
 
 class OperationManager:
     def __init__(self):
@@ -27,3 +25,11 @@ class OperationManager:
 
     def divide(self, n1, n2):
             return n1 / n2
+
+    def perform_operation(self,symbol, n1, n2):
+        operation_selected = self.operations[symbol]
+        result = operation_selected(n1, n2)
+        return result
+
+operacion = OperationManager()
+print(operacion.perform_operation("+", 1, 2))
