@@ -1,5 +1,4 @@
 #TODO:
-
 # definir la clase OperationManager:
 # debe contener el diccionario de símbolos → métodos
 # debe contener métodos matemáticos
