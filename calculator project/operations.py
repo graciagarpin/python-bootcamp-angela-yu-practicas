@@ -31,8 +31,4 @@ class OperationManager:
         return result
 
     def provide_symbol(self):
-        print(self.operations.keys())
-
-operacion = OperationManager()
-print(operacion.perform_operation("+", 1, 2))
-print(operacion.provide_symbol())
+        return self.operations.keys()
