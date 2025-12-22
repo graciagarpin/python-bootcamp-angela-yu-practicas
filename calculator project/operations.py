@@ -31,10 +31,7 @@ class OperationManager:
         return result
 
     def provide_symbol(self):
-        available_symbols = list()
-        for symbol in self.operations:
-            available_symbols.append(symbol)
-        return available_symbols
+        print(self.operations.keys())
 
 operacion = OperationManager()
 print(operacion.perform_operation("+", 1, 2))
