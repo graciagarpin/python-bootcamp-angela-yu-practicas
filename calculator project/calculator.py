@@ -17,3 +17,7 @@ class Calculator:
             symbols = self.operation_manager.provide_symbol()
             for symbol in symbols:
                 print(symbol, end=" ")
+            operation_symbol = input("Pick an operation: ")
+            next_num = float(input("What's the next number?: "))
+            answer = self.operation_manager.perform_operation(operation_symbol, first_num, next_num)
+            print(answer)
