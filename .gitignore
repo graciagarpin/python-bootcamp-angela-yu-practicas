@@ -19,6 +19,9 @@ venv/
 .DS_Store
 Thumbs.db
 
+# PyCharm / IntelliJ
+.idea/
+
 # Logs y archivos temporales
 *.log
 *.tmp
